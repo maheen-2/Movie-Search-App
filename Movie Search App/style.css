@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #006466;
+    --secondary-color: #212f45;
+}
+
+body {
+    background-image: url(baxk.jpg);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+
+header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--secondary-color);
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: #fff;
+    font-family: 'Merienda', cursive;
+}
+
+.search {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: #fff;
+    font-family: inherit;
+}
+
+.search:focus {
+    outline: 0;
+    background-color: var(--primary-color);
+}
+
+.search::placeholder {
+    color: #f3722c;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie {
+    width: 300px;
+    margin: 1rem;
+    border-radius: 3px;
+    box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
+    background-color: var(--secondary-color);
+    position: relative;
+    /*This overflow does that the movie overview wont be displayed on the page until hover or clicked. Means apparently its disappeared*/
+    overflow: hidden;
+}
+
+
+.movie img {
+    width: 100%;
+}
+
+.movie-info {
+    color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+}
+
+
+.movie-info span {
+    background-color: #723c7050;
+    padding: 0 0.25rem;
+    border-radius: 3px;
+    font-weight: bold;
+
+}
+
+.movie-info span.green {
+    color: #f94144
+}
+
+.movie-info span.orange {
+    color: orange;
+}
+
+.movie-info span.red {
+    color: red;
+}
+
+.overview {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e1e5f2;
+    padding: 1rem;
+    max-height: 100%;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in;
+}
+
+.movie:hover .overview {
+    transform: translateY(0)
+}
+
+
+
+.popup .overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    /*Z Index is a CSS property that defines the order of overlapping HTML elements.*/
+    /*Z index only works on positioned elements (position:absolute, position:relative, or position:fixed).*/
+    /* Elements with a higher index will be placed on top of elements with a lower index.*/
+    z-index: 1;
+    /*Negative z index means that elemant will be behind the content always.*/
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.popupContent {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #006466;
+    background-size: cover;
+    width: 700px;
+    max-width: 80%;
+    /*popup will be above the overlay bcuz it has greater z index than overlay.*/
+    z-index: 2;
+    color: #eee;
+
+}
+
+.popupHeader {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.closebtn {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: w#eee;
+}
+
+.popupBody {
+    padding: 20px 50px;
+}
+
+.subscribe {
+    border-radius: 80px;
+    padding: 0.5rem 1rem;
+}
+
+.subscribe:focus {
+    outline: 0;
+    background-color: var(--primary-color);
+}
+
+.subscribe::placeholder {
+    color: #f3722c;
+}
+
+.popupBody .submitbtn {
+    padding: 5px;
+    background-color: #a01a58;
+    border-radius: 20px;
+    border: 1px solid #eee;
+    cursor: pointer;
+    color: #eee;
+}
